@@ -34,6 +34,38 @@ The drum track is written on MIDI channel 10 using General MIDI notes
 (36 kick, 38 snare, 42 closed hat), which is the mapping most drum
 instruments expect.
 
+## Running it on your own laptop
+
+Nothing here needs the internet once installed, so this works anywhere.
+
+**1. Get Python 3.9+** — `python3 --version` to check. If it is missing, install
+it from python.org (tick "Add Python to PATH" on Windows).
+
+**2. Get the code and the libraries:**
+
+```bash
+git clone https://github.com/Querth/ok.git
+cd ok
+pip install librosa soundfile mido reportlab
+```
+
+**3. Put your audio somewhere and run it:**
+
+```bash
+python3 beatkit/run.py ~/Music/mybeat.mp3
+```
+
+The chart and MIDI appear in `output/`. That is it.
+
+**If mp3 loading complains**, install ffmpeg and try again — `brew install ffmpeg`
+on macOS, `sudo apt install ffmpeg` on Ubuntu, or download it from ffmpeg.org on
+Windows. Converting the file to `.wav` first also sidesteps the problem.
+
+**Recording a track to analyse:** the simplest route is Audacity (free, all
+platforms) set to record your computer's own output, or just your phone's voice
+recorder held near the speakers. The analyser is fairly forgiving — a phone
+recording is usually clean enough to get tempo and chords out of.
+
 ## How much to trust it
 
 Machine listening is good at some of this and shaky at other parts:
